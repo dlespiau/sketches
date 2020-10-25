@@ -26,6 +26,10 @@ const sketch = () => {
       marginX: (0.2 * width) / numTileX,
       marginY: (0.2 * height) / numTileY,
     };
+    const center = {
+      x: width / 3,
+      y: height / 3,
+    };
 
     const draw = new draw2D.Draw(context, width, height);
 
@@ -45,6 +49,20 @@ const sketch = () => {
 
         const x = tile.width * i + tile.width / 2;
         const y = tile.height * j + tile.height / 2;
+
+        /*
+        const dir = {
+          x: x - center.x,
+          y: y - center.y,
+        };
+        const l = Math.sqrt(dir.x * dir.x + dir.y * dir.y);
+        const unit = {
+          x: dir.x / l,
+          y: dir.y / l,
+        };
+        draw.setTranslation(x - unit.x * 100, y - unit.y * 900);
+        */
+
         draw.setTranslation(x, y);
 
         const w = tile.width - tile.marginX;
