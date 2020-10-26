@@ -1,0 +1,16 @@
+{
+  "name": "10-print",
+  "version": "1.0.0",
+  "description": "",
+  "main": "10-print.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ekinox/cetera": "file:../cetera",
+    "canvas-sketch": "^0.7.4"
+  }
+}
