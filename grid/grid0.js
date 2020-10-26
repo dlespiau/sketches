@@ -72,7 +72,7 @@ const sketch = () => {
           (step / numTileY) * 0.55 + 0.4,
           16
         );
-        draw.rect(w * percent, h * percent);
+        draw.fillRect(w * percent, h * percent);
 
         /*
         const percent2 = rand.noise2D(
@@ -82,7 +82,7 @@ const sketch = () => {
         );
 
         context.fillStyle = palette[rand.rangeInt(0, palette.length - 1, [bg])];
-        draw.rect(w * percent2, h * percent2);
+        draw.fillRect(w * percent2, h * percent2);
         */
 
         step++;
