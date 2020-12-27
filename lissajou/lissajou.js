@@ -99,7 +99,7 @@ const sketch = () => {
     width *= 0.9;
     height *= 0.9;
 
-    const p = curves[3];
+    const p = curves[2];
     const curve = lissajou(p.freqX, p.phaseX, p.freqY, width, height, p);
     context.lineWidth = 1;
     context.fillStyle = "#ff0000";
