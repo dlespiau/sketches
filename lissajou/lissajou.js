@@ -55,11 +55,20 @@ function drawShape(draw, s, radius) {
 
 const curves = [
   {
+    freqX: 13,
+    phaseX: 45,
+    freqY: 5,
+    modX: 0,
+    modY: 0,
+    radius: 150,
+  },
+  {
     freqX: 2,
     phaseX: 90,
     freqY: 2,
     modX: 8,
     modY: 16,
+    radius: 100,
   },
   {
     freqX: 4,
@@ -67,6 +76,15 @@ const curves = [
     freqY: 4,
     modX: 16.01,
     modY: 16.07,
+    radius: 100,
+  },
+  {
+    freqX: 4,
+    phaseX: 90,
+    freqY: 5,
+    modX: 23,
+    modY: 8,
+    radius: 120,
   },
 ];
 
@@ -81,12 +99,13 @@ const sketch = () => {
     width *= 0.9;
     height *= 0.9;
 
-    const curve = lissajou(13, 45, 5, width, height, {});
+    const p = curves[3];
+    const curve = lissajou(p.freqX, p.phaseX, p.freqY, width, height, p);
     context.lineWidth = 1;
     context.fillStyle = "#ff0000";
-    drawShape(draw, curve, 150);
-    /*
+    drawShape(draw, curve, p.radius);
     context.strokeStyle = "#002fa7";
+    /*
     draw.shape(curve, {
       method: "point",
       closed: true
