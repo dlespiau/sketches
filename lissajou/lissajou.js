@@ -1,5 +1,5 @@
 const canvasSketch = require("canvas-sketch");
-const { map, radians } = require("@ekinox/cetera");
+const { dist, map, radians } = require("@ekinox/cetera");
 const draw2D = require("@ekinox/cetera/draw");
 
 const settings = {
@@ -30,6 +30,29 @@ function lissajou(
   return curve;
 }
 
+function drawShape(draw, s, radius) {
+  const v = s.vertices;
+
+  for (let i = 0; i < v.length; i++) {
+    for (let j = 0; j < v.length; j++) {
+      if (i === j) {
+        continue;
+      }
+
+      const d = dist(v[i][0], v[i][1], v[j][0], v[j][1]);
+      if (d > radius) {
+        // we only connect points closer than radius.
+        continue;
+      }
+
+      const a = Math.pow(1 / (d / radius + 1), 6);
+
+      draw.ctx.strokeStyle = `rgba(0, 47, 167, ${a})`;
+      draw.line(v[i][0], v[i][1], v[j][0], v[j][1]);
+    }
+  }
+}
+
 const curves = [
   {
     freqX: 2,
@@ -58,10 +81,17 @@ const sketch = () => {
     width *= 0.9;
     height *= 0.9;
 
-    const curve = lissajou(15, 90, 14, width, height, {});
-    context.lineWidth = 8;
+    const curve = lissajou(13, 45, 5, width, height, {});
+    context.lineWidth = 1;
+    context.fillStyle = "#ff0000";
+    drawShape(draw, curve, 150);
+    /*
     context.strokeStyle = "#002fa7";
-    draw.shape(curve, { closed: true });
+    draw.shape(curve, {
+      method: "point",
+      closed: true
+    });
+    */
   };
 };
 
