@@ -80,6 +80,14 @@ const curves = [
   },
   {
     freqX: 4,
+    phaseX: 45,
+    freqY: 10,
+    modX: 7.9,
+    modY: 0.5,
+    radius: 120,
+  },
+  {
+    freqX: 4,
     phaseX: 1,
     freqY: 5,
     modX: 11,
