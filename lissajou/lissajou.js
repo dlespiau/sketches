@@ -71,6 +71,14 @@ const curves = [
     radius: 150,
   },
   {
+    freqX: 7.8,
+    phaseX: 90,
+    freqY: 8.04,
+    modX: 8.02,
+    modY: 15.98,
+    radius: 140,
+  },
+  {
     freqX: 12,
     phaseX: 90,
     freqY: 10,
