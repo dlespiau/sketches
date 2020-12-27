@@ -80,6 +80,14 @@ const curves = [
   },
   {
     freqX: 4,
+    phaseX: 1,
+    freqY: 5,
+    modX: 11,
+    modY: 4,
+    radius: 120,
+  },
+  {
+    freqX: 4,
     phaseX: 90,
     freqY: 5,
     modX: 23,
@@ -99,7 +107,7 @@ const sketch = () => {
     width *= 0.9;
     height *= 0.9;
 
-    const p = curves[1];
+    const p = curves[3];
     const curve = lissajou(p.freqX, p.phaseX, p.freqY, width, height, p);
     context.lineWidth = 1;
     context.fillStyle = "#ff0000";
